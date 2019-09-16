@@ -9,10 +9,25 @@ html {
   height: 100%;
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
 .brand {
   @extend .mincho;
 
-  font-size: 4rem;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .sub {
+    @extend .text-muted;
+
+    font-size: 0.95rem;
+  }
 }

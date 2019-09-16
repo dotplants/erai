@@ -16,6 +16,7 @@
     "@yuzulabo/prettier-config": "^1.0.1",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^5.2.1",
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3",
     "nodemon": "^1.19.2",
@@ -54,11 +55,11 @@
     "format:md": "prettier --write --ignore-path .gitignore \"**/*.md\"",
     "format:json": "prettier --write --ignore-path .gitignore \"**/*.json\"",
     "format": "npm-run-all format:* -s",
-    "build:client": "parcel build client/index.html --no-source-maps --public-url ./assets/dist/ -d public/dist",
-    "build:server": "babel server -d build --config-file ./.babelrc.server.js",
+    "build:client": "parcel build client/index.html --no-source-maps --public-url /assets/dist/ -d public/dist",
+    "build:server": "cross-env NODE_ENV=production babel server -d build --config-file ./.babelrc.server.js",
     "build": "npm-run-all build:* -s",
-    "watch:client": "parcel watch client/index.html --public-url ./assets/dist/ -d public/dist",
-    "watch:server": "nodemon --exec \"NODE_ENV=development babel-node server/index.js --config-file ./.babelrc.server.js\" --watch server",
+    "watch:client": "parcel watch client/index.html --public-url /assets/dist/ -d public/dist",
+    "watch:server": "nodemon --exec \"cross-env NODE_ENV=development babel-node server/index.js --config-file ./.babelrc.server.js\" --watch server",
     "start": "node build/index.js"
   },
   "prettier": "@yuzulabo/prettier-config"

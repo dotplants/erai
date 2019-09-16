@@ -7,12 +7,15 @@ export default class Header extends React.Component {
   render() {
     return (
       <header>
-        <div className="brand">えらい。</div>
+        <div className="brand">
+          <div className="title">えらい。</div>
+          <div className="sub">- ERAI -</div>
+        </div>
 
         <Nav horizontal="center">
           <NavLink to="/">ホーム</NavLink>
-          <NavLink to="/">ランダムえらい</NavLink>
-          <NavLink to="/">ログイン</NavLink>
+          <NavLink to="/random">ランダムえらい</NavLink>
+          <NavLink to="/login">ログイン</NavLink>
         </Nav>
       </header>
     );

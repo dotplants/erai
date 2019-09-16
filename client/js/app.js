@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './components/header/index';
+import Footer from './components/footer/index';
 import Routes from './routes';
 
 export default class App extends React.Component {
@@ -12,6 +13,8 @@ export default class App extends React.Component {
         <hr />
 
         <Routes />
+
+        <Footer />
       </div>
     );
   }

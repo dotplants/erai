@@ -7,7 +7,10 @@ export default class NavLink extends React.Component {
   static propTypes = {
     to: PropTypes.string.isRequired,
     className: PropTypes.string,
-    children: PropTypes.any
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ]).isRequired
   };
 
   render() {
